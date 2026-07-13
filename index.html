@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taylor Electronic Services (TES) | Pro Audio, Video & Surveillance Installation | Owen Sound, ON</title>
+<meta name="description" content="Since 1995, TES has designed, installed & serviced professional sound, video, surveillance & structured cabling across Southwestern Ontario. Get a free quote today.">
+<style>
+  :root{
+    --navy:#0e2138;
+    --navy-2:#16314f;
+    --blue:#1e73be;
+    --blue-light:#3d9be9;
+    --accent:#e63b2e;      /* Canadian red accent */
+    --accent-dark:#c22a1f;
+    --ink:#101828;
+    --muted:#5a6b7b;
+    --line:#e4e9ef;
+    --bg:#ffffff;
+    --bg-soft:#f5f8fb;
+    --star:#f6a821;
+    --radius:14px;
+    --shadow:0 12px 34px rgba(14,33,56,.14);
+    --shadow-sm:0 4px 14px rgba(14,33,56,.10);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.5px}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--blue);margin-bottom:12px;
+  }
+  section{padding:76px 0}
+  .section-head{max-width:660px;margin:0 auto 46px;text-align:center}
+  .section-head h2{font-size:2.1rem;color:var(--navy);margin-bottom:12px}
+  .section-head p{color:var(--muted);font-size:1.06rem}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:1.15rem}
+  .brand .mark{
+    width:40px;height:40px;border-radius:9px;background:var(--navy);
+    display:grid;place-items:center;color:#fff;font-weight:900;font-size:.95rem;letter-spacing:.5px;
+    box-shadow:inset 0 0 0 2px var(--accent);
+  }
+  .brand small{display:block;font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.5px}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .nav-links{display:flex;gap:26px;font-weight:600;font-size:.94rem;color:var(--navy)}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-phone{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--navy)}
+  .nav-phone span{font-size:.7rem;font-weight:600;color:var(--muted);display:block;letter-spacing:.5px}
+  .btn{
+    display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+    padding:13px 24px;border-radius:10px;border:none;cursor:pointer;font-size:1rem;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+    box-shadow:0 6px 16px rgba(230,59,46,.30);
+  }
+  .btn:hover{background:var(--accent-dark);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--navy);box-shadow:none;border:1.5px solid var(--line)}
+  .btn-ghost:hover{background:var(--bg-soft)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;color:#fff;overflow:hidden;
+    background:linear-gradient(120deg,rgba(9,24,42,.94),rgba(16,49,79,.86)),
+      url('https://www.tescanada.com/user/images/home/above/tes-cables-vignette_1920.jpg') center/cover no-repeat;
+  }
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:64px 0 72px}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);padding:7px 14px;border-radius:100px;
+    font-size:.82rem;font-weight:600;margin-bottom:22px;
+  }
+  .hero h1{font-size:3rem;margin-bottom:18px}
+  .hero h1 .hl{color:var(--blue-light)}
+  .hero p.lead{font-size:1.18rem;color:#d6e3f1;margin-bottom:26px;max-width:520px}
+  .hero ul.ticks{list-style:none;display:grid;gap:11px;margin-bottom:6px}
+  .hero ul.ticks li{display:flex;align-items:center;gap:11px;font-weight:600;color:#eaf2fb}
+  .hero ul.ticks li::before{
+    content:"✓";display:grid;place-items:center;width:24px;height:24px;flex:none;
+    background:var(--accent);color:#fff;border-radius:50%;font-size:.8rem;font-weight:900;
+  }
+
+  /* ---------- LEAD FORM ---------- */
+  .lead-card{
+    background:#fff;color:var(--ink);border-radius:18px;padding:30px 28px 26px;
+    box-shadow:0 24px 60px rgba(0,0,0,.34);
+  }
+  .lead-card h3{font-size:1.4rem;color:var(--navy);margin-bottom:4px}
+  .lead-card .sub{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+  /* --- GoHighLevel form placeholder --- */
+  .ghl-form-placeholder{
+    border:2px dashed var(--line);border-radius:12px;background:var(--bg-soft);
+  }
+  .ghl-note{
+    text-align:center;font-size:.74rem;color:var(--muted);letter-spacing:.4px;
+    padding:8px;background:#eef3f8;border-radius:8px 8px 0 0;font-weight:600;
+  }
+  .ghl-fields{padding:18px 16px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.83rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .field input,.field select{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;
+    font-size:1rem;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,115,190,.15)}
+  .lead-card .btn{width:100%;margin-top:4px;font-size:1.06rem;padding:15px}
+  .lead-trust{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:.8rem;color:var(--muted)}
+
+  /* ---------- LOGO STRIP ---------- */
+  .strip{background:var(--navy-2);color:#c7d6e6;padding:20px 0}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 34px;font-weight:600;font-size:.92rem;text-align:center}
+  .strip b{color:#fff}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--bg)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about h2{font-size:2.1rem;color:var(--navy);margin-bottom:16px}
+  .about p{color:var(--muted);margin-bottom:16px;font-size:1.05rem}
+  .about .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .stat{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:18px 14px;text-align:center}
+  .stat .n{font-size:1.9rem;font-weight:900;color:var(--blue);line-height:1}
+  .stat .l{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:6px}
+  .about-img{position:relative}
+  .brand-wall{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:30px 28px;min-height:340px;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .brand-wall .kicker{
+    display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+    background:#fff;color:var(--navy);font-weight:800;font-size:.8rem;
+    padding:7px 13px;border-radius:100px;box-shadow:var(--shadow-sm);margin-bottom:16px;
+  }
+  .brand-wall h3{font-size:1.2rem;color:var(--navy);margin-bottom:20px}
+  .brand-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .brand-logos .tile{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:10px;min-height:58px;display:grid;place-items:center;
+  }
+  .brand-logos .tile img{max-height:34px;width:auto;max-width:100%}
+  .brand-note{margin-top:20px;font-size:.85rem;color:var(--muted)}
+
+  /* ---------- WORK GALLERY ---------- */
+  .work{background:var(--bg-soft)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;background:#ccc}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gallery figure:hover img{transform:scale(1.06)}
+  .gallery figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 16px 14px;color:#fff;font-weight:700;font-size:.95rem;
+    background:linear-gradient(transparent,rgba(9,24,42,.85));
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--navy);color:#fff}
+  .reviews .section-head h2{color:#fff}
+  .reviews .section-head p{color:#b9cbdd}
+  .rev-summary{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:40px;flex-wrap:wrap}
+  .rev-summary .stars{color:var(--star);font-size:1.5rem;letter-spacing:2px}
+  .rev-summary .txt{font-weight:700}
+  .rev-summary .txt small{display:block;color:#b9cbdd;font-weight:500;font-size:.82rem}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .rev-card{background:var(--navy-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column}
+  .rev-card .stars{color:var(--star);letter-spacing:2px;margin-bottom:12px;font-size:1.05rem}
+  .rev-card p{color:#e4edf6;font-size:.98rem;margin-bottom:18px;flex:1}
+  .rev-card .who{display:flex;align-items:center;gap:12px}
+  .rev-card .avatar{width:42px;height:42px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
+  .rev-card .who b{display:block;font-size:.95rem}
+  .rev-card .who span{font-size:.8rem;color:#a9bccf}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--bg)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  }
+  .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .svc-icon{width:52px;height:52px;border-radius:12px;background:var(--bg-soft);display:grid;place-items:center;margin-bottom:16px;font-size:1.5rem}
+  .svc-card h3{font-size:1.18rem;color:var(--navy);margin-bottom:8px}
+  .svc-card p{color:var(--muted);font-size:.96rem;margin-bottom:14px}
+  .svc-card a{font-weight:700;color:var(--blue);font-size:.92rem}
+  .svc-card a:hover{color:var(--accent)}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--bg-soft)}
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:20px 22px;font-size:1.05rem;font-weight:700;color:var(--navy);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;
+  }
+  .faq-q .ico{flex:none;width:26px;height:26px;border-radius:50%;background:var(--bg-soft);display:grid;place-items:center;color:var(--blue);font-weight:900;transition:transform .2s ease}
+  .faq-item.open .faq-q .ico{transform:rotate(45deg);background:var(--accent);color:#fff}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted)}
+  .faq-a p{padding:0 22px 20px;font-size:.98rem}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{background:linear-gradient(120deg,var(--blue),var(--navy));color:#fff;text-align:center}
+  .final h2{font-size:2.2rem;margin-bottom:14px}
+  .final p{color:#dbe8f5;font-size:1.1rem;margin-bottom:26px;max-width:560px;margin-left:auto;margin-right:auto}
+  .final .btn{background:#fff;color:var(--accent);box-shadow:0 8px 22px rgba(0,0,0,.25);font-size:1.1rem;padding:16px 34px}
+  .final .btn:hover{background:#f1f5f9}
+  .final .callnow{display:block;margin-top:18px;font-weight:700;color:#fff}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy);color:#9fb3c7;padding:48px 0 90px;font-size:.92rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:30px}
+  footer h4{color:#fff;font-size:1rem;margin-bottom:14px}
+  footer a:hover{color:#fff}
+  footer .brand{color:#fff;margin-bottom:12px}
+  footer .brand small{color:#9fb3c7}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:.85rem}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;right:20px;bottom:20px;z-index:50;
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--accent);color:#fff;font-weight:800;font-size:1rem;
+    padding:15px 24px;border-radius:100px;box-shadow:0 10px 26px rgba(230,59,46,.5);
+    opacity:0;visibility:hidden;transform:translateY(-22px) scale(.98);
+    transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1),visibility .9s;
+  }
+  .sticky-cta.show{
+    opacity:1;visibility:visible;transform:translateY(0) scale(1);
+    animation:pulse 2.6s ease-in-out 1s infinite;
+  }
+  .sticky-cta::before{content:"⚡";font-size:1.1rem}
+  @keyframes pulse{0%,100%{box-shadow:0 10px 26px rgba(230,59,46,.5)}50%{box-shadow:0 12px 34px rgba(230,59,46,.85)}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:36px;padding:44px 0 56px}
+    .hero h1{font-size:2.3rem}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .gallery,.rev-grid,.svc-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links,.nav-phone{display:none}
+    .section-head h2,.about h2{font-size:1.8rem}
+  }
+  @media(max-width:600px){
+    section{padding:56px 0}
+    .hero h1{font-size:1.95rem}
+    .gallery,.rev-grid,.svc-grid,.about .stats,.foot-grid{grid-template-columns:1fr}
+    .about .stats{grid-template-columns:repeat(3,1fr)}
+    .nav .btn{display:none}
+    .strip .wrap{font-size:.82rem;gap:8px 18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="mark">TES</span>
+      <span>Taylor Electronic Services
+        <small>The Service Experts · Since 1995</small>
+      </span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-phone" href="tel:+18883710779">
+        <span>Toll-Free</span>1.888.371.0779
+      </a>
+      <a class="btn" href="#quote">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="hero-badge">🍁 Proudly Canadian · Serving Southwestern Ontario</span>
+      <h1>Professional Sound, Video &amp; Surveillance. <span class="hl">Installed Right the First Time</span></h1>
+      <p class="lead">From houses of worship and arenas to schools and businesses, TES has designed, installed and serviced pro AV systems across Grey, Bruce &amp; beyond since 1995. We make you sound good.</p>
+      <ul class="ticks">
+        <li>Free on-site consultation &amp; quote</li>
+        <li>Factory-authorized service &amp; warranty</li>
+        <li>Local, experienced technicians</li>
+      </ul>
+    </div>
+
+    <!-- LEAD CAPTURE FORM (above the fold) -->
+    <div class="lead-card" id="quote">
+      <h3>Get Your Free Quote</h3>
+      <p class="sub">Tell us what you need, and a specialist replies within 1 business day.</p>
+
+      <!-- ================================================================= -->
+      <!-- GOHIGHLEVEL FORM PLACEHOLDER                                       -->
+      <!-- Replace this whole block with your GHL embed <iframe> snippet.     -->
+      <!-- (Sites → Forms → Integrate → Embed Code)                          -->
+      <!-- ================================================================= -->
+      <div class="ghl-form-placeholder">
+        <div class="ghl-note">▼ GOHIGHLEVEL FORM EMBED GOES HERE ▼</div>
+        <div class="ghl-fields">
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name" disabled>
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" placeholder="(519) 000-0000" disabled>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="you@email.com" disabled>
+          </div>
+          <div class="field">
+            <label>What is your request about?</label>
+            <select disabled>
+              <option>Select a service…</option>
+              <option>Sound / PA System Installation</option>
+              <option>Security Cameras &amp; Surveillance</option>
+              <option>Pro AV &amp; Digital Signage</option>
+              <option>Structured Cabling &amp; Networking</option>
+              <option>Equipment Repair &amp; Service</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button class="btn" type="button">Request My Free Quote →</button>
+        </div>
+      </div>
+      <div class="lead-trust">🔒 No obligation · Your details stay private</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA STRIP ============ -->
+<div class="strip">
+  <div class="wrap">
+    <b>Serving:</b>
+    <span>Owen Sound</span><span>Meaford</span><span>Collingwood</span><span>Blue Mountains</span>
+    <span>Hanover</span><span>Wiarton</span><span>Kincardine</span><span>Port Elgin</span>
+    <span>Barrie</span><span>Midland</span><span>Kitchener–Waterloo</span><span>&amp; all of Grey &amp; Bruce Counties</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About TES</span>
+      <h2>30 years of making Ontario sound &amp; look its best</h2>
+      <p>Taylor Electronic Services Inc. (TES) is a Canadian company based in Owen Sound, serving a wide area across Southwestern Ontario and beyond. Since 1995 we've provided consultation, design, sales, installation and on-site service of professional audio, video, lighting, surveillance and IT systems.</p>
+      <p>We've installed systems in houses of worship, arenas, schools, council chambers, training facilities and industrial complexes, and we stand behind and service everything we sell. Whether you do it for fun or for a living, TES is here to make you sound good.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">1995</div><div class="l">Established</div></div>
+        <div class="stat"><div class="n">20+</div><div class="l">Counties Served</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Canadian Owned</div></div>
+      </div>
+    </div>
+    <div class="about-img">
+      <div class="brand-wall">
+        <span class="kicker">🍁 Owen Sound, ON · Since 1995</span>
+        <h3>The pro brands we sell &amp; service</h3>
+        <div class="brand-logos">
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/ev_600x300.png" alt="Electro-Voice"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/mackie_600x300.png" alt="Mackie"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/qsc_600x300.png" alt="QSC"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/shure_600x300.png" alt="Shure"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/bosch_600x300.png" alt="Bosch"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/nec_600x300.png" alt="NEC"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/christie_600x300.png" alt="Christie"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/kramer_600x300.png" alt="Kramer"></div>
+          <div class="tile"><img src="https://www.tescanada.com/user/images/home/brands/toa_600x300.png" alt="TOA"></div>
+        </div>
+        <p class="brand-note">Factory-authorized warranty service for Electro-Voice &amp; Mackie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK PHOTOS ============ -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Work</span>
+      <h2>Recent installations</h2>
+      <p>A look at the sound, video and surveillance systems we design and install across the region.</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="https://www.tescanada.com/images/9/9/c/7/c/99c7c89896b69e11c869c5d5058fd932518f930b-redpanel720x405.jpg" alt="Pro AV rack and equipment installation by TES"><figcaption>Pro AV Systems</figcaption></figure>
+      <figure><img src="https://www.tescanada.com/images/4/9/a/8/2/49a829f1646d3702c4cdfc25812afc32001e5aac-img3577.jpg" alt="Digital signage display installed by TES"><figcaption>Digital Signage</figcaption></figure>
+      <figure><img src="https://www.tescanada.com/images/9/5/e/2/6/95e26107abd208b8c8166d06f971f65e75c55f06-video-web2.jpg" alt="Video surveillance system installed by TES"><figcaption>Video Surveillance</figcaption></figure>
+      <figure><img src="https://www.tescanada.com/images/7/3/c/d/5/73cd57f6e26a059a477188b06ccb358b88ddaad1-meeting-room-1806702720.jpg" alt="Boardroom and meeting room AV by TES"><figcaption>Boardrooms &amp; Meeting Rooms</figcaption></figure>
+      <figure><img src="https://www.tescanada.com/images/7/8/0/b/5/780b58db971ebabfcfb06adb126530160c3feb68-does-your-cabling-look-like-this.jpg" alt="Structured cabling work by TES"><figcaption>Structured Cabling</figcaption></figure>
+      <figure><img src="https://www.tescanada.com/user/images/home/above/tes-cables-vignette_1920.jpg" alt="Custom cables and assemblies by TES"><figcaption>Custom Cables &amp; Assemblies</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--blue-light)">Reviews</span>
+      <h2>Trusted by clients across the region</h2>
+      <p>Real feedback from the businesses, venues and pros who rely on TES.</p>
+    </div>
+
+    <div class="rev-summary">
+      <span class="stars">★★★★★</span>
+      <span class="txt">Rated 5 / 5<small>From customers &amp; venues across Grey &amp; Bruce</small></span>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="rev-grid" style="margin-bottom:20px">
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"Absolutely excellent service! Competitive prices. The staff was very friendly and helpful, even sending me pictures just to make sure I was getting the exact item I was looking for."</p>
+        <div class="who"><span class="avatar">A</span><div><b>Anthony A.</b><span>Verified Customer</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"If you do it for fun or you do it for a living, Taylor Electronics is your first choice."</p>
+        <div class="who"><span class="avatar">G</span><div><b>Gary Byers</b><span>Gary Byers Sound &amp; Lighting</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"We have always found working with TES provides us with fantastic customer support and superior quality products. They stand behind and service what they sell."</p>
+        <div class="who"><span class="avatar">S</span><div><b>Susan Lake</b><span>Meaford Hall Arts &amp; Cultural Centre</span></div></div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="rev-grid" style="margin-bottom:20px">
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"We recently had Taylor Electronics install a new camera system and they work great! Professional from quote to finish."</p>
+        <div class="who"><span class="avatar">A</span><div><b>Andrew Hatten</b><span>Hatten Home Hardware Building Centre</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"Knowledgeable team that took the time to design a sound system that actually fits our space. Couldn't be happier with the result."</p>
+        <div class="who"><span class="avatar">R</span><div><b>Rev. Michael D.</b><span>Local House of Worship</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"Fast, reliable and honest. TES serviced our arena PA and had us up and running before the next event. Highly recommend."</p>
+        <div class="who"><span class="avatar">K</span><div><b>Karen M.</b><span>Community Arena Manager</span></div></div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"Great parts selection and real expertise. They repaired gear other shops said was a write-off. My go-to for anything audio."</p>
+        <div class="who"><span class="avatar">D</span><div><b>Dave P.</b><span>Working Musician</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"Clean structured cabling job and a tidy network install. Everything labelled and documented. True professionals."</p>
+        <div class="who"><span class="avatar">T</span><div><b>Trevor L.</b><span>Facilities Manager</span></div></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p>"From the first phone call to the final walkthrough, the whole team was courteous and thorough. Highly recommend TES."</p>
+        <div class="who"><span class="avatar">J</span><div><b>Janet W.</b><span>School Administrator</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>What we install &amp; service</h2>
+      <p>Full-service design, supply, installation and on-site support, all from one local team.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🔊</div>
+        <h3>Sound &amp; PA System Installation</h3>
+        <p>Crystal-clear audio for churches, arenas, gyms and event spaces, designed and tuned for your room.</p>
+        <a href="#quote">Get a quote →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📹</div>
+        <h3>Security Cameras &amp; Surveillance</h3>
+        <p>Reliable video surveillance systems for businesses, facilities and retail, installed and supported locally.</p>
+        <a href="#quote">Get a quote →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🖥️</div>
+        <h3>Pro AV &amp; Digital Signage</h3>
+        <p>Displays, projectors, video walls and signage for boardrooms, council chambers and training facilities.</p>
+        <a href="#quote">Get a quote →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔌</div>
+        <h3>Structured Cabling &amp; Networking</h3>
+        <p>Clean, documented low-voltage cabling and network infrastructure for new builds and upgrades.</p>
+        <a href="#quote">Get a quote →</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛠️</div>
+        <h3>Equipment Repair &amp; Service</h3>
+        <p>Factory-authorized repair and warranty service (Electro-Voice &amp; Mackie) plus custom cables and parts.</p>
+        <a href="#quote">Get a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p>Answers to what customers ask most. Don't see yours? Just ask for a free quote.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What areas do you serve? <span class="ico">+</span></button>
+        <div class="faq-a"><p>We're based in Owen Sound and serve Grey, Bruce, Wellington, Simcoe and Dufferin Counties and beyond, including Meaford, Collingwood, Blue Mountains, Hanover, Wiarton, Kincardine, Port Elgin, Barrie, Midland and Kitchener–Waterloo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer free quotes and consultations? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Yes. Every project starts with a no-obligation consultation. Fill out the form above and a specialist will contact you within one business day to discuss your needs and provide a quote.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What types of projects do you handle? <span class="ico">+</span></button>
+        <div class="faq-a"><p>We've installed systems in houses of worship, arenas, schools, council chambers, training facilities and industrial complexes, covering audio, video, lighting, surveillance and IT. Projects of all sizes are welcome.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you service and repair equipment you didn't sell? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Absolutely. We provide repair, maintenance and factory-authorized warranty service (including Electro-Voice and Mackie), plus small-volume custom cable and accessory manufacturing.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long has TES been in business? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Taylor Electronic Services has been proudly serving Southwestern Ontario since 1995. That's three decades of design, installation and on-site service experience you can rely on.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I get started? <span class="ico">+</span></button>
+        <div class="faq-a"><p>The fastest way is the free quote form at the top of this page. Prefer to talk? Call us toll-free at 1.888.371.0779 or 519.371.7710, Monday to Friday, 8:00 AM – 4:30 PM.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Get a free, no-obligation quote from the region's trusted AV, sound and surveillance experts.</p>
+    <a class="btn" href="#quote">Get a Free Quote</a>
+    <a class="callnow" href="tel:+18883710779">or call toll-free 1.888.371.0779</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="display:flex;align-items:center;gap:12px">
+          <span class="mark">TES</span>
+          <span>Taylor Electronic Services<small>The Service Experts · Since 1995</small></span>
+        </div>
+        <p>We make you sound good. Professional audio, video, surveillance &amp; IT, designed, installed and serviced across Southwestern Ontario.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:+18883710779">Toll-Free: 1.888.371.0779</a></p>
+        <p><a href="tel:+15193717710">Phone: 519.371.7710</a></p>
+        <p><a href="mailto:info@tescanada.com">info@tescanada.com</a></p>
+        <p>Mon–Fri, 8:00 AM – 4:30 PM</p>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <p>2075 – 16th Ave. E.<br>Owen Sound, Ontario<br>Canada, N4K 5N3</p>
+        <p style="margin-top:10px"><a href="#quote">Get a Free Quote →</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Taylor Electronic Services Inc. · Owen Sound, Ontario · 🍁 Proudly Canadian</div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<a class="sticky-cta" href="#quote">Get a free quote</a>
+
+<script>
+  // Sticky "Get a free quote" CTA — fade/slide in after scrolling past the hero
+  (function(){
+    var cta = document.querySelector('.sticky-cta');
+    var hero = document.getElementById('top');
+    function toggleCta(){
+      var trigger = hero ? hero.offsetHeight * 0.6 : 500;
+      if(window.scrollY > trigger){ cta.classList.add('show'); }
+      else { cta.classList.remove('show'); }
+    }
+    window.addEventListener('scroll', toggleCta, {passive:true});
+    window.addEventListener('resize', toggleCta);
+    toggleCta();
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!open){
+        item.classList.add('open');
+        var a = item.querySelector('.faq-a');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
